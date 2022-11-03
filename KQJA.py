@@ -19,15 +19,14 @@ deck = Numbers + Jacks + Queens + Kings + Aces
 # Shuffle Deck
 deck_shuffled = rnd.sample(deck, len(deck))
 
-'''
-print("*"*50)
-print("\nUnshuffled Deck")
-print(deck)
-print("*"*50)
-print("\nShuffled Deck")
-print(deck_shuffled)
-print("*"*50)
-'''
+# Print Deck
+# print("*"*50)
+# print("\nUnshuffled Deck")
+# print(deck)
+# print("*"*50)
+# print("\nShuffled Deck")
+# print(deck_shuffled)
+# print("*"*50)
 
 # Deal cards between the 2 players
 for card in range(52):
@@ -44,8 +43,7 @@ print(p2)
 print("\n")
 
 # Play Game
-
-current_player = 1
+c_player = 1  # Current Player
 while ((len(p1) > 0) or (len(p2) > 0)) == True :  # Player 1 or 2 still have cards
     pile.append(p1.pop(0))
     print("Pile:",pile)
@@ -56,21 +54,19 @@ while ((len(p1) > 0) or (len(p2) > 0)) == True :  # Player 1 or 2 still have car
 
     pile.append(p2.pop(0))
     print("Pile:",pile)
-    top_card_pos = len(pile)
-    print(top_card_pos)
-    print(pile[top_card_pos-1])
-    top_card_val = pile[top_card_pos-1]
-
-'''
-    if last_card == 0:
-        for cards in range(1)
-        pile.append(player2[0])
-    player1(pop(0))
     last_card = len(pile)
+    print(last_card)
+    print(pile[last_card - 1])
+    top_card_val = pile[last_card - 1]
+
+    # if last_card == 0:
+    #     for cards in range(1)
+    #     pile.append(player2[0])
+    # player1(pop(0))
+    # last_card = len(pile)
     
 
-    if player1 = 
-'''
+
 
 
 
