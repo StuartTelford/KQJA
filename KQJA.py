@@ -8,6 +8,7 @@ import random as rnd
 # Variables
 p1 = []
 p2 = []
+players = []
 pile = []
 Numbers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 Jacks = [1,1,1,1]
@@ -40,19 +41,32 @@ print("\nPlayer1's Cards")
 print(p1)
 print("\nPlayer2's Cards")
 print(p2)
-print("\n")
 
-# Play Game
-c_player = 1  # Current Player
-while ((len(p1) > 0) or (len(p2) > 0)) == True :  # Player 1 or 2 still have cards
-    pile.append(p1.pop(0))
+# Create List of lists with both players cards
+players.append(p1)
+players.append(p2)
+print(players)
+
+# Print first card from p0 and p1
+# cp=0
+# print(players[cp][0])
+# print(len(players[0]))  # 26
+# cp=1
+# print(players[cp][0])
+# print(len(players[1]))  # 26
+
+# Play Game - Deal all cards onto pile
+c_player = 0  # Current Player (0 & 1 )
+while ((len(players[0]) > 0) or (len(players[1]) > 0)) == True :  # Player 0 or 0 still have cards
+    pile.append(players[c_player].pop(0))
     print("Pile:",pile)
     top_card_pos = len(pile)
     print(top_card_pos)
     print(pile[top_card_pos-1])
     top_card_val = pile[top_card_pos-1]
 
-    pile.append(p2.pop(0))
+    c_player = 1
+    pile.append(players[c_player].pop(0))
     print("Pile:",pile)
     last_card = len(pile)
     print(last_card)
@@ -64,11 +78,3 @@ while ((len(p1) > 0) or (len(p2) > 0)) == True :  # Player 1 or 2 still have car
     #     pile.append(player2[0])
     # player1(pop(0))
     # last_card = len(pile)
-    
-
-
-
-
-
-
-    
