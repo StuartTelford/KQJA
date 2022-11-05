@@ -6,7 +6,7 @@
 import random as rnd
 
 # Variables
-players = [[],[]]
+players = [[], []]
 pile = []
 numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 jacks = [1, 1, 1, 1]
@@ -26,42 +26,23 @@ deck_shuffled = rnd.sample(deck, len(deck))
 
 # Deal cards between the 2 players
 for card in range(52):
-    if card % 2 == 0: # If an even number add to player1
+    if card % 2 == 0:  # If an even number add to player1
         players[0].append(deck_shuffled[card])
     else:
         players[1].append(deck_shuffled[card])
 
-# Show both hands
-# print(players)
-# print('')
-# print('Player1',players[0])
-# print('Player2',players[1])
-
-# Print first card from p0 and p1
-# cp=0
-# print(players[cp][0])
-# print(len(players[0]))  # 26
-# cp=1
-# print(players[cp][0])
-# print(len(players[1]))  # 26
-
 # Play Game - Deal all cards onto pile
-c_player = 0  # Current Player (0 & 1 )
+c_player = 1  # Current Player (0 & 1 )
 while ((len(players[0]) > 0) or (len(players[1]) > 0)) == True :  # Player 0 or 0 still have cards
+    c_player ^= 1  # Flip between 1 and 0
+    print('c_player:',c_player)
     pile.append(players[c_player].pop(0))
     print("Pile:",pile)
     top_card_pos = len(pile)
-    print(top_card_pos)
-    print(pile[top_card_pos-1])
+    # print(top_card_pos)
+    # print(pile[top_card_pos-1])
     top_card_val = pile[top_card_pos-1]
 
-    c_player = 1
-    pile.append(players[c_player].pop(0))
-    print("Pile:",pile)
-    last_card = len(pile)
-    print(last_card)
-    print(pile[last_card - 1])
-    top_card_val = pile[last_card - 1]
 
     # if last_card == 0:
     #     for cards in range(1)
