@@ -8,7 +8,8 @@ import random as rnd
 # Variables
 players = [[], []]
 pile = []
-numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+           0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 jacks = [1, 1, 1, 1]
 queens = [2, 2, 2, 2]
 kings = [3, 3, 3, 3]
@@ -33,16 +34,17 @@ for card in range(52):
 
 # Play Game - Deal all cards onto pile
 c_player = 1  # Current Player (0 & 1 )
-while ((len(players[0]) > 0) or (len(players[1]) > 0)) == True :  # Player 0 or 0 still have cards
+while ((len(players[0]) > 0) or (len(players[1]) > 0)) is True:  # Player 0 or 1 still have cards
     c_player ^= 1  # Flip between 1 and 0
-    print('c_player:',c_player)
+    print('c_player:', c_player)
     pile.append(players[c_player].pop(0))
-    print("Pile:",pile)
+    print("Pile:", pile)
     top_card_pos = len(pile)
     # print(top_card_pos)
     # print(pile[top_card_pos-1])
-    top_card_val = pile[top_card_pos-1]
+    top_card_val = pile[top_card_pos - 1]
 
+print('Game Over')
 
     # if last_card == 0:
     #     for cards in range(1)
