@@ -6,46 +6,36 @@
 import random as rnd
 
 # Variables
-p1 = []
-p2 = []
-players = []
+players = [[],[]]
 pile = []
-Numbers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-Jacks = [1,1,1,1]
-Queens = [2,2,2,2]
-Kings = [3,3,3,3]
-Aces = [4,4,4,4]
-deck = Numbers + Jacks + Queens + Kings + Aces
+numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+jacks = [1, 1, 1, 1]
+queens = [2, 2, 2, 2]
+kings = [3, 3, 3, 3]
+aces = [4, 4, 4, 4]
+deck = numbers + jacks + queens + kings + aces
 
 # Shuffle Deck
 deck_shuffled = rnd.sample(deck, len(deck))
 
-# Print Deck
-# print("*"*50)
-# print("\nUnshuffled Deck")
+# Print deck
+# print("Unshuffled Deck")
 # print(deck)
-# print("*"*50)
-# print("\nShuffled Deck")
+# print("Shuffled Deck")
 # print(deck_shuffled)
-# print("*"*50)
 
 # Deal cards between the 2 players
 for card in range(52):
     if card % 2 == 0: # If an even number add to player1
-        p1.append(deck_shuffled[card])
+        players[0].append(deck_shuffled[card])
     else:
-        p2.append(deck_shuffled[card])
+        players[1].append(deck_shuffled[card])
 
-# Print cards for both players
-print("\nPlayer1's Cards")
-print(p1)
-print("\nPlayer2's Cards")
-print(p2)
-
-# Create List of lists with both players cards
-players.append(p1)
-players.append(p2)
-print(players)
+# Show both hands
+# print(players)
+# print('')
+# print('Player1',players[0])
+# print('Player2',players[1])
 
 # Print first card from p0 and p1
 # cp=0
